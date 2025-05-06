@@ -98,3 +98,13 @@ stopwords += ['yours', 'yourself', 'yourselves']
 
 def removeStopwords(wordlist, stopwords):
     return [w for w in wordlist if w not in stopwords]
+
+def wordListToFreqDict(wordlist):
+    wordfreq = [wordlist.count(p) for p in wordlist]
+    return dict(list(zip(wordlist,wordfreq)))
+
+def sortFreqDict(freqdict):
+    aux = [(freqdict[key], key) for key in freqdict]
+    aux.sort()
+    aux.reverse()
+    return aux
